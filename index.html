@@ -21,8 +21,8 @@
   --gradient:linear-gradient(135deg,var(--primary),var(--primary-dark))
 }
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Inter','Whitney','Helvetica Neue',Helvetica,Arial,sans-serif;background-color:var(--bg);color:var(--text);line-height:1.6;transition:var(--transition);overflow-x:hidden}
-header{background:var(--bg);box-shadow:0 2px 20px rgba(0,0,0,0.05);position:fixed;width:100%;top:0;z-index:1000;transition:var(--transition)}
+body{font-family:'Inter','Whitney','Helvetica Neue',Helvetica,Arial,sans-serif;background-color:var(--bg);color:var(--text);line-height:1.6;transition:var(--transition);overflow-x:hidden;scroll-behavior:smooth}
+header{background:var(--bg);box-shadow:0 2px 20px rgba(0,0,0,0.05);position:fixed;width:100%;top:0;z-index:1000;transition:var(--transition);backdrop-filter: blur(8px)}
 .dark-mode header{box-shadow:0 2px 20px rgba(0,0,0,0.2)}
 .nav-container{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center;height:70px;position:relative}
 .logo{display:flex;align-items:center;gap:12px;font-weight:700;font-size:1.5rem;color:var(--primary)}
@@ -42,7 +42,7 @@ header{background:var(--bg);box-shadow:0 2px 20px rgba(0,0,0,0.05);position:fixe
 .hero-actions{display:flex;gap:15px;justify-content:center;flex-wrap:wrap}
 .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 30px;border-radius:12px;font-weight:600;text-decoration:none;transition:var(--transition);border:none;cursor:pointer;font-size:1rem}
 .btn-primary{background:white;color:var(--primary);box-shadow:0 4px 14px rgba(0,0,0,0.1)}
-.btn-primary:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,0.15)}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 8px 30px rgba(0,0,0,0.2)}
 .btn-secondary{background:rgba(255,255,255,0.15);backdrop-filter:blur(10px);color:white;border:1px solid rgba(255,255,255,0.2)}
 .btn-secondary:hover{background:rgba(255,255,255,0.25);transform:translateY(-3px)}
 .theme-toggle{background:var(--card-bg);border:1px solid var(--border);color:var(--text-light);width:45px;height:45px;border-radius:12px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:var(--transition)}
@@ -53,17 +53,17 @@ section{padding:100px 0}
 .section-subtitle{color:var(--primary);font-weight:600;margin-bottom:15px;display:block}
 .section-title{font-size:2.5rem;font-weight:700;margin-bottom:20px}
 .section-description{color:var(--text-light);max-width:600px;margin:0 auto;font-size:1.1rem}
-.stats{background:var(--card-bg);border-radius:20px;padding:60px 40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px;box-shadow:var(--shadow);margin-top:-50px;position:relative;z-index:2}
-.stat-item{text-align:center}
+/* Stats */
+.stats{background:var(--card-bg);border-radius:20px;padding:60px 40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px;box-shadow:var(--shadow);margin-top:-50px;position:relative;z-index:2;text-align:center}
 .stat-number{font-size:3rem;font-weight:800;color:var(--primary);margin-bottom:10px;display:block}
 .stat-label{color:var(--text-light);font-size:1.1rem}
-.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px}
 .feature-card{background:var(--card-bg);border-radius:16px;padding:40px 30px;box-shadow:var(--shadow);transition:var(--transition);border:1px solid var(--border);text-align:center}
 .feature-card:hover{transform:translateY(-10px);box-shadow:0 20px 40px rgba(0,0,0,0.1)}
 .dark-mode .feature-card:hover{box-shadow:0 20px 40px rgba(0,0,0,0.3)}
 .feature-icon{width:70px;height:70px;background:var(--gradient);border-radius:16px;display:flex;align-items:center;justify-content:center;margin:0 auto 25px;color:white;font-size:1.8rem}
 .feature-title{font-size:1.4rem;font-weight:700;margin-bottom:15px}
 .feature-description{color:var(--text-light);line-height:1.7}
+/* Commands */
 .commands-container{background:var(--card-bg);border-radius:20px;padding:50px;box-shadow:var(--shadow)}
 .commands-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
 .command-card{background:var(--bg);border-radius:12px;padding:20px;border-left:4px solid var(--primary);transition:var(--transition)}
@@ -71,10 +71,7 @@ section{padding:100px 0}
 .dark-mode .command-card:hover{box-shadow:0 10px 20px rgba(0,0,0,0.2)}
 .command-name{font-weight:700;margin-bottom:8px;color:var(--primary)}
 .command-description{color:var(--text-light);font-size:0.95rem}
-.impressum{background:var(--card-bg);border-radius:20px;padding:50px;box-shadow:var(--shadow)}
-.impressum-title{font-size:1.8rem;margin-bottom:30px;color:var(--primary);text-align:center}
-.impressum-section{margin-bottom:25px}
-.impressum-section-title{font-size:1.2rem;margin-bottom:10px;color:var(--primary);border-bottom:2px solid var(--border);padding-bottom:5px}
+/* Footer */
 footer{background:var(--card-bg);padding:60px 0 30px;border-top:1px solid var(--border)}
 .footer-content{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:40px;margin-bottom:40px}
 .footer-column h3{font-size:1.2rem;margin-bottom:20px;color:var(--primary)}
@@ -83,7 +80,7 @@ footer{background:var(--card-bg);padding:60px 0 30px;border-top:1px solid var(--
 .footer-links a{color:var(--text-light);text-decoration:none;transition:var(--transition)}
 .footer-links a:hover{color:var(--primary)}
 .footer-bottom{text-align:center;padding-top:30px;border-top:1px solid var(--border);color:var(--text-light)}
-/* Hamburger Menu */
+/* Hamburger */
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer}
 .hamburger div{width:25px;height:3px;background:var(--text-light);transition:var(--transition)}
 .nav-links-mobile{display:none;position:absolute;top:70px;left:0;width:100%;background:var(--bg);flex-direction:column;align-items:center;gap:20px;padding:20px 0;box-shadow:0 4px 20px rgba(0,0,0,0.1)}
@@ -102,56 +99,67 @@ footer{background:var(--card-bg);padding:60px 0 30px;border-top:1px solid var(--
 .hamburger.open div:nth-child(2) { opacity: 0; }
 .hamburger.open div:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 }
+/* Scroll to Top Button */
+#scrollTop{position:fixed;bottom:30px;right:30px;width:50px;height:50px;background:var(--primary);color:#fff;border:none;border-radius:50%;cursor:pointer;display:none;align-items:center;justify-content:center;z-index:1000;transition:var(--transition)}
+#scrollTop:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,0.2)}
+/* Cookie Banner */
+#cookieBanner{position:fixed;bottom:0;width:100%;background:var(--card-bg);color:var(--text);padding:20px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 -4px 20px rgba(0,0,0,0.1);z-index:10000}
+#cookieBanner button{background:var(--primary);color:#fff;border:none;padding:10px 20px;border-radius:12px;cursor:pointer;transition:var(--transition)}
+#cookieBanner button:hover{opacity:0.9}
 </style>
 </head>
 <body>
+
 <header>
-<div class="nav-container">
-<div class="logo"><div class="logo-icon"><i class="fab fa-discord"></i></div><span>Nowbot</span></div>
-<nav class="nav-links">
-<a href="#features" class="nav-link">Features</a>
-<a href="#commands" class="nav-link">Commands</a>
-<a href="#stats" class="nav-link">Stats</a>
-<a href="#impressum" class="nav-link">Impressum</a>
-</nav>
-<div class="nav-actions">
-<button class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i></button>
-<a href="#" class="btn btn-primary"><i class="fab fa-discord"></i> Invite Bot</a>
-<div class="hamburger" id="hamburger">
-<div></div><div></div><div></div>
-</div>
-</div>
-<div class="nav-links-mobile" id="navMobile">
-<a href="#features" class="nav-link">Features</a>
-<a href="#commands" class="nav-link">Commands</a>
-<a href="#stats" class="nav-link">Stats</a>
-<a href="#impressum" class="nav-link">Impressum</a>
-</div>
-</div>
+  <div class="nav-container">
+    <div class="logo"><div class="logo-icon"><i class="fab fa-discord" aria-hidden="true"></i></div><span>Nowbot</span></div>
+    <nav class="nav-links">
+      <a href="#features" class="nav-link">Features</a>
+      <a href="#commands" class="nav-link">Commands</a>
+      <a href="#stats" class="nav-link">Stats</a>
+      <a href="#impressum" class="nav-link">Impressum</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
+      <a href="#" class="btn btn-primary"><i class="fab fa-discord" aria-hidden="true"></i> Add to Discord</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+        <div></div><div></div><div></div>
+      </button>
+    </div>
+    <div class="nav-links-mobile" id="navMobile">
+      <a href="#features" class="nav-link">Features</a>
+      <a href="#commands" class="nav-link">Commands</a>
+      <a href="#stats" class="nav-link">Stats</a>
+      <a href="#impressum" class="nav-link">Impressum</a>
+    </div>
+  </div>
 </header>
 
-<!-- Hero Section (bleibt beim alten)-->
+<main>
+<!-- Hero Section -->
 <section class="hero">
-<div class="hero-content">
-<div class="hero-badge"><i class="fas fa-star"></i> Most Popular Discord Bot</div>
-<h1 class="hero-title">Revolutionize Your Discord Server</h1>
-<p class="hero-description">Nowbot brings powerful moderation, ticket systems, and utility features to take your Discord community to the next level.</p>
-<div class="hero-actions">
-<a href="#" class="btn btn-primary"><i class="fab fa-discord"></i> Add to Discord</a>
-<a href="#" class="btn btn-secondary"><i class="fas fa-play-circle"></i> View Demo</a>
-</div>
-</div>
-</section>
-
-<section class="container">
-  <div class="stats" id="stats">
-    <div class="stat-item"><span class="stat-number">45</span><span class="stat-label">Active Servers</span></div>
-    <div class="stat-item"><span class="stat-number">360</span><span class="stat-label">Happy Users</span></div>
-    <div class="stat-item"><span class="stat-number">8</span><span class="stat-label">Team Members</span></div>
-    <div class="stat-item"><span class="stat-number">24/7</span><span class="stat-label">Uptime</span></div>
+  <div class="hero-content">
+    <div class="hero-badge"><i class="fas fa-star" aria-hidden="true"></i> Most Popular Discord Bot</div>
+    <h1 class="hero-title">Revolutionize Your Discord Server</h1>
+    <p class="hero-description">Nowbot brings powerful moderation, ticket systems, and utility features to take your Discord community to the next level.</p>
+    <div class="hero-actions">
+      <a href="#" class="btn btn-primary"><i class="fab fa-discord" aria-hidden="true"></i> Add to Discord</a>
+      <a href="#" class="btn btn-secondary"><i class="fas fa-play-circle" aria-hidden="true"></i> View Demo</a>
+    </div>
   </div>
 </section>
 
+<!-- Stats -->
+<section class="container">
+  <div class="stats" id="stats">
+    <div class="stat-item"><span class="stat-number" data-value="45">0</span><span class="stat-label">Active Servers</span></div>
+    <div class="stat-item"><span class="stat-number" data-value="360">0</span><span class="stat-label">Happy Users</span></div>
+    <div class="stat-item"><span class="stat-number" data-value="8">0</span><span class="stat-label">Team Members</span></div>
+    <div class="stat-item"><span class="stat-number" data-value="24">0</span><span class="stat-label">24/7 Uptime</span></div>
+  </div>
+</section>
+
+<!-- Features -->
 <section id="features">
   <div class="container">
     <div class="section-header">
@@ -167,6 +175,7 @@ footer{background:var(--card-bg);padding:60px 0 30px;border-top:1px solid var(--
   </div>
 </section>
 
+<!-- Commands -->
 <section id="commands">
   <div class="container">
     <div class="section-header">
@@ -189,6 +198,7 @@ footer{background:var(--card-bg);padding:60px 0 30px;border-top:1px solid var(--
   </div>
 </section>
 
+<!-- Impressum -->
 <section id="impressum">
   <div class="container">
     <div class="section-header">
@@ -212,6 +222,7 @@ footer{background:var(--card-bg);padding:60px 0 30px;border-top:1px solid var(--
     </div>
   </div>
 </section>
+</main>
 
 <!-- Footer -->
 <footer>
@@ -221,7 +232,6 @@ footer{background:var(--card-bg);padding:60px 0 30px;border-top:1px solid var(--
         <h3>Nowbot</h3>
         <p>The ultimate Discord bot for server management, moderation, and utility features.</p>
       </div>
-
       <div class="footer-column">
         <h3>Quick Links</h3>
         <ul class="footer-links">
@@ -231,7 +241,6 @@ footer{background:var(--card-bg);padding:60px 0 30px;border-top:1px solid var(--
           <li><a href="#impressum">Impressum</a></li>
         </ul>
       </div>
-
       <div class="footer-column">
         <h3>Support</h3>
         <ul class="footer-links">
@@ -242,83 +251,88 @@ footer{background:var(--card-bg);padding:60px 0 30px;border-top:1px solid var(--
         </ul>
       </div>
     </div>
-
     <div class="footer-bottom">
       <p>&copy; 2023 Nowbot. All rights reserved.</p>
     </div>
   </div>
 </footer>
 
+<!-- Scroll to Top Button -->
+<button id="scrollTop" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
+
+<!-- Cookie Banner -->
+<div id="cookieBanner">
+  <span>Wir verwenden Cookies, um die Nutzererfahrung zu verbessern.</span>
+  <button id="acceptCookie">Akzeptieren</button>
+</div>
 
 <script>
+/* Dark Mode */
 const themeToggle = document.getElementById('themeToggle');
 const themeIcon = themeToggle.querySelector('i');
-
-// Prüfen, ob Dark Mode gespeichert ist
-if (localStorage.getItem('darkMode') === 'enabled') {
-  document.body.classList.add('dark-mode');
-  themeIcon.classList.replace('fa-moon', 'fa-sun');
-}
-
-// Theme umschalten
-themeToggle.addEventListener('click', () => {
+if(localStorage.getItem('darkMode')==='enabled'){document.body.classList.add('dark-mode');themeIcon.classList.replace('fa-moon','fa-sun');}
+themeToggle.addEventListener('click',()=>{
   document.body.classList.toggle('dark-mode');
+  if(document.body.classList.contains('dark-mode')){localStorage.setItem('darkMode','enabled');themeIcon.classList.replace('fa-moon','fa-sun');}
+  else{localStorage.setItem('darkMode','disabled');themeIcon.classList.replace('fa-sun','fa-moon');}
+});
 
-  if (document.body.classList.contains('dark-mode')) {
-    localStorage.setItem('darkMode', 'enabled');
-    themeIcon.classList.replace('fa-moon', 'fa-sun');
-  } else {
-    localStorage.setItem('darkMode', 'disabled');
-    themeIcon.classList.replace('fa-sun', 'fa-moon');
+/* Smooth Scroll */
+document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+  anchor.addEventListener('click',function(e){
+    e.preventDefault();
+    const targetId=this.getAttribute('href');
+    if(targetId==='#') return;
+    const targetElement=document.querySelector(targetId);
+    if(targetElement){window.scrollTo({top:targetElement.offsetTop-70,behavior:'smooth'});}
+  });
+});
+
+/* Header Shadow on Scroll */
+window.addEventListener('scroll',()=>{
+  const header=document.querySelector('header');
+  if(window.scrollY>10){header.style.boxShadow=document.body.classList.contains('dark-mode')?'0 4px 20px rgba(0,0,0,0.3)':'0 4px 20px rgba(0,0,0,0.1)';}
+  else{header.style.boxShadow=document.body.classList.contains('dark-mode')?'0 2px 20px rgba(0,0,0,0.2)':'0 2px 20px rgba(0,0,0,0.05)';}
+});
+
+/* Hamburger Menu */
+const hamburger=document.getElementById('hamburger');
+const navMobile=document.getElementById('navMobile');
+hamburger.addEventListener('click',()=>{
+  navMobile.classList.toggle('active');
+  hamburger.classList.toggle('open');
+  hamburger.setAttribute('aria-expanded', navMobile.classList.contains('active'));
+});
+
+/* Scroll to Top Button */
+const scrollTop=document.getElementById('scrollTop');
+window.addEventListener('scroll',()=>{scrollTop.style.display=(window.scrollY>300)?'flex':'none';});
+scrollTop.addEventListener('click',()=>{window.scrollTo({top:0,behavior:'smooth'});});
+
+/* Stats Counter Animation */
+const stats=document.querySelectorAll('.stat-number');
+let statsStarted=false;
+window.addEventListener('scroll',()=>{
+  const trigger=document.querySelector('.stats').offsetTop - window.innerHeight + 100;
+  if(window.scrollY>trigger && !statsStarted){
+    stats.forEach(stat=>{
+      const value=parseInt(stat.dataset.value);
+      let counter=0;
+      const interval=setInterval(()=>{
+        counter+=Math.ceil(value/50);
+        if(counter>=value){stat.textContent=value;clearInterval(interval);}
+        else{stat.textContent=counter;}
+      },30);
+    });
+    statsStarted=true;
   }
 });
 
-
-  // Smooth Scrolling für Navigation
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-
-      const targetId = this.getAttribute('href');
-      if (targetId === '#') return;
-
-      const targetElement = document.querySelector(targetId);
-      if (targetElement) {
-        window.scrollTo({
-          top: targetElement.offsetTop - 80,
-          behavior: 'smooth'
-        });
-      }
-    });
-  });
-
-  // Header Shadow beim Scrollen
-  window.addEventListener('scroll', () => {
-    const header = document.querySelector('header');
-    if (window.scrollY > 10) {
-      header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
-      if (document.body.classList.contains('dark-mode')) {
-        header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.3)';
-      }
-    } else {
-      header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.05)';
-      if (document.body.classList.contains('dark-mode')) {
-        header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.2)';
-      }
-    }
-  });
+/* Cookie Banner */
+const cookieBanner=document.getElementById('cookieBanner');
+document.getElementById('acceptCookie').addEventListener('click',()=>{
+  cookieBanner.style.display='none';
+});
 </script>
-
-<script>
-  const hamburger = document.getElementById('hamburger');
-  const navMobile = document.getElementById('navMobile');
-
-  hamburger.addEventListener('click', () => {
-    navMobile.classList.toggle('active');
-    hamburger.classList.toggle('open');
-  });
-</script>
-
-
 </body>
 </html>
